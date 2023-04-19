@@ -60,12 +60,10 @@ export default function App() {
 
 The above form fields accept all props specific to the Material UI documentation as well as the following optional props:
 
-<div style="width: 700px">
-  | Prop      | Type                   |
-  | --------- | ---------------------- |
-  | cols      | Object                 |
-  | validator | Yup Validator Instance |
-</div>
+| Prop      | Type                   |
+| --------- | ---------------------- |
+| cols      | Object                 |
+| validator | Yup Validator Instance |
 
 ### Validation
 
