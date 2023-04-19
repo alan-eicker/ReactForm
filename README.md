@@ -58,9 +58,7 @@ export default function App() {
 
 [<Form.TextField />](https://mui.com/material-ui/react-text-field/)\
 [<Form.Autocomplete />](https://mui.com/material-ui/react-autocomplete/)\
-[<Form.Checkbox />](https://mui.com/material-ui/react-checkbox/)\
-[<Form.FormControlLabel />](https://mui.com/material-ui/api/form-control-label/)\
-[<Form.Radio />](https://mui.com/material-ui/api/radio/)\
+<Form.CheckOption />\
 [<Form.Select />](https://mui.com/material-ui/react-select/)\
 [<Form.Slider />](https://mui.com/material-ui/react-slider/)\
 [<Form.Switch />](https://mui.com/material-ui/react-switch/)
