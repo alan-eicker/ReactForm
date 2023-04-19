@@ -1,6 +1,5 @@
 import React from 'react';
 import Form, { validate } from './Form';
-import TextField from '@mui/material/TextField';
 
 import './styles.css';
 import '@fontsource/roboto/300.css';
@@ -19,20 +18,20 @@ export default function App() {
   return (
     <main>
       <Form>
-        <TextField
+        <Form.TextField
           cols={layout.firstName}
           name="firstName"
           label="First Name"
           validator={validate.string().required('First name is required')}
         />
-        <TextField
+        <Form.TextField
           cols={layout.lastName}
           name="lastName"
           label="Last Name"
           validator={validate.string().required('Last name is required')}
         />
-        <TextField cols={layout.mi} name="middleInitial" label="MI" />
-        <TextField
+        <Form.TextField cols={layout.mi} name="middleInitial" label="MI" />
+        <Form.TextField
           cols={layout.emailAddress}
           name="emailAddress"
           label="Email Address"
