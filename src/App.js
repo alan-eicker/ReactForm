@@ -40,6 +40,10 @@ export default function App() {
             .email('Invalid email address')
             .required('Email address is required')}
         />
+        <Form.FormControlLabel
+          control={<Form.Checkbox />}
+          label="I agree to the terms"
+        />
       </Form>
     </main>
   );
