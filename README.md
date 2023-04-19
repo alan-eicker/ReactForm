@@ -2,6 +2,8 @@
 
 A simple React form component with Build in layout and validation features.
 
+View the [demo](https://alaneicker1975.github.io/ReactForm/).
+
 ### Usage
 
 ```jsx

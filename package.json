@@ -25,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gh-pages": "gh-pages -d build",
+    "deploy": "rm -rf node_modules/.cache/gh-pages && npm run build && npm run gh-pages"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-perf": "^3.3.1"
+    "eslint-plugin-react-perf": "^3.3.1",
+    "gh-pages": "^5.0.0"
   }
 }
