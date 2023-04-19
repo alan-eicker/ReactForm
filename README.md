@@ -7,7 +7,6 @@ A simple React form component with Build in layout and validation features.
 ```jsx
 import React from 'react';
 import Form, { validate } from './Form';
-import TextField from '@mui/material/TextField';
 
 const layout = {
   firstName: { xs: 12, md: 5 },
