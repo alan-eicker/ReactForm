@@ -34,6 +34,7 @@ export default function Form({ children = null, submitButtonText = 'Submit' }) {
   const { errors, handleSubmit, handleChange, touched, values } = useFormik({
     initialValues,
     validationSchema,
+    validateOnChange: false,
     onSubmit: (formValues) => {
       console.log(formValues);
     },
