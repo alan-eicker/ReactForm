@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Form, { validate } from './Form';
+import TextField from '@mui/material/TextField';
 
-function App() {
+import './styles.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+const layout = {
+  firstName: { xs: 12, md: 5 },
+  lastName: { xs: 12, md: 5 },
+  mi: { xs: 12, md: 2 },
+  emailAddress: { xs: 12, md: 12 },
+};
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Form>
+        <TextField
+          cols={layout.firstName}
+          name="firstName"
+          label="First Name"
+          validator={validate.string().required('First name is required')}
+        />
+        <TextField
+          cols={layout.lastName}
+          name="lastName"
+          label="Last Name"
+          validator={validate.string().required('Last name is required')}
+        />
+        <TextField cols={layout.mi} name="middleInitial" label="MI" />
+        <TextField
+          cols={layout.emailAddress}
+          name="emailAddress"
+          label="Email Address"
+          validator={validate
+            .string()
+            .email('Invalid email address')
+            .required('Email address is required')}
+        />
+      </Form>
+    </main>
   );
 }
-
-export default App;
