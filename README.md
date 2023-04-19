@@ -58,6 +58,8 @@ The Form component uses `Formik` and `Yup` to handle the form state. Adding a `v
 />
 ```
 
+The imported `validate` variable is an alias for `yup`, which is exported as part for the Form component.
+
 For more information on Yup validation schemas, checkout the [Yup](https://github.com/jquense/yup) documentation page.
 
 ### Layout
