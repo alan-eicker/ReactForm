@@ -56,6 +56,15 @@ export default function App() {
 [<Form.Slider />](https://mui.com/material-ui/react-slider/)\
 [<Form.Switch />](https://mui.com/material-ui/react-switch/)
 
+#### Props
+
+The above form fields accept all props specific to the Material UI documentation as well as the following optional props:
+
+| Prop      | Type                   |
+| --------- | ---------------------- |
+| cols      | Object                 |
+| validator | Yup Validator Instance |
+
 ### Validation
 
 The Form component uses `Formik` and `Yup` to handle the form state. Adding a `validator` prop with a validation rule to a form field will apply that validation rule to that field. The rule below will make the `firsName `field required and show the error message "First name is required" when the field is invalid.
