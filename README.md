@@ -10,31 +10,28 @@ View the [demo](https://alaneicker1975.github.io/ReactForm/).
 import React from 'react';
 import Form, { validate } from './Form';
 
-const layout = {
-  firstName: { xs: 12, md: 5 },
-  lastName: { xs: 12, md: 5 },
-  mi: { xs: 12, md: 2 },
-  emailAddress: { xs: 12, md: 12 },
-};
-
 export default function App() {
   return (
     <Form>
       <Form.TextField
-        cols={layout.firstName}
+        cols={{ xs: 12, md: 5 }}
         name="firstName"
         label="First Name"
         validator={validate.string().required('First name is required')}
       />
       <Form.TextField
-        cols={layout.lastName}
+        cols={{ xs: 12, md: 5 }}
         name="lastName"
         label="Last Name"
         validator={validate.string().required('Last name is required')}
       />
-      <Form.TextField cols={layout.mi} name="middleInitial" label="MI" />
       <Form.TextField
-        cols={layout.emailAddress}
+        cols={{ xs: 12, md: 2 }}
+        name="middleInitial"
+        label="MI"
+      />
+      <Form.TextField
+        cols={{ xs: 12, md: 12 }}
         name="emailAddress"
         label="Email Address"
         validator={validate
