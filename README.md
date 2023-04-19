@@ -19,20 +19,20 @@ const layout = {
 export default function App() {
   return (
     <Form>
-      <TextField
+      <Form.TextField
         cols={layout.firstName}
         name="firstName"
         label="First Name"
         validator={validate.string().required('First name is required')}
       />
-      <TextField
+      <Form.TextField
         cols={layout.lastName}
         name="lastName"
         label="Last Name"
         validator={validate.string().required('Last name is required')}
       />
-      <TextField cols={layout.mi} name="middleInitial" label="MI" />
-      <TextField
+      <Form.TextField cols={layout.mi} name="middleInitial" label="MI" />
+      <Form.TextField
         cols={layout.emailAddress}
         name="emailAddress"
         label="Email Address"
