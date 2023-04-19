@@ -60,6 +60,12 @@ export default function App() {
 
 The above form fields accept all props specific to the Material UI documentation as well as the following optional props:
 
+<style>
+  table {
+    width: 100%;
+  }
+</style>
+
 | Prop      | Type                   |
 | --------- | ---------------------- |
 | cols      | Object                 |
