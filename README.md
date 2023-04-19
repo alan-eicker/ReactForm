@@ -57,3 +57,19 @@ The Form component uses `Formik` and `Yup` to handle the form state. Adding a `v
   validator={validate.string().required('First name is required')}
 />
 ```
+
+For more information on Yup validation schemas, checkout the [https://github.com/jquense/yup](Yup) documentation page.
+
+### Layout
+
+The forms layout utilizes Material UI Grid and can be adjusted by adding the `cols` prop to specify column widths for different breakpoints.
+
+```jsx
+<TextField
+  name="firstName"
+  label="First Name"
+  cols={{ xs: 12, sm: 6, md: 6 }}
+/>
+```
+
+For more information about Material UI Grid, checkout the [https://v4.mui.com/components/grid/](Material UI Grid) documentation page.
