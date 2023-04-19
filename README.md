@@ -58,7 +58,7 @@ The Form component uses `Formik` and `Yup` to handle the form state. Adding a `v
 />
 ```
 
-For more information on Yup validation schemas, checkout the [https://github.com/jquense/yup](Yup) documentation page.
+For more information on Yup validation schemas, checkout the [Yup](https://github.com/jquense/yup) documentation page.
 
 ### Layout
 
@@ -72,4 +72,4 @@ The forms layout utilizes Material UI Grid and can be adjusted by adding the `co
 />
 ```
 
-For more information about Material UI Grid, checkout the [https://v4.mui.com/components/grid/](Material UI Grid) documentation page.
+For more information about Material UI Grid, checkout the [Material UI Grid](https://v4.mui.com/components/grid/) documentation page.
