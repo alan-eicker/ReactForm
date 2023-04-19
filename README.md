@@ -40,6 +40,15 @@ export default function App() {
           .email('Invalid email address')
           .required('Email address is required')}
       />
+      <Form.CheckOption
+        type="checkbox"
+        name="agree"
+        label="I agree to the terms and conditions"
+        validator={validate
+          .string()
+          .oneOf(['true'])
+          .required('Please agree to the terms and conditions')}
+      />
     </Form>
   );
 }

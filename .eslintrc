@@ -5,5 +5,8 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:react-perf/recommended"
-  ]
+  ],
+  "rules": {
+    "react-perf/jsx-no-new-object-as-prop": 0
+  }
 }

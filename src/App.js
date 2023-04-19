@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 import Form, { validate } from './Form';
 
 import './styles.css';
@@ -17,34 +18,41 @@ const layout = {
 export default function App() {
   return (
     <main>
-      <Form>
-        <Form.TextField
-          cols={layout.firstName}
-          name="firstName"
-          label="First Name"
-          validator={validate.string().required('First name is required')}
-        />
-        <Form.TextField
-          cols={layout.lastName}
-          name="lastName"
-          label="Last Name"
-          validator={validate.string().required('Last name is required')}
-        />
-        <Form.TextField cols={layout.mi} name="middleInitial" label="MI" />
-        <Form.TextField
-          cols={layout.emailAddress}
-          name="emailAddress"
-          label="Email Address"
-          validator={validate
-            .string()
-            .email('Invalid email address')
-            .required('Email address is required')}
-        />
-        <Form.FormControlLabel
-          control={<Form.Checkbox />}
-          label="I agree to the terms"
-        />
-      </Form>
+      <Box component="div" sx={{ p: 3, border: '1px solid #ccc' }}>
+        <Form>
+          <Form.TextField
+            cols={layout.firstName}
+            name="firstName"
+            label="First Name"
+            validator={validate.string().required('First name is required')}
+          />
+          <Form.TextField
+            cols={layout.lastName}
+            name="lastName"
+            label="Last Name"
+            validator={validate.string().required('Last name is required')}
+          />
+          <Form.TextField cols={layout.mi} name="middleInitial" label="MI" />
+          <Form.TextField
+            cols={layout.emailAddress}
+            name="emailAddress"
+            label="Email Address"
+            validator={validate
+              .string()
+              .email('Invalid email address')
+              .required('Email address is required')}
+          />
+          <Form.CheckOption
+            type="checkbox"
+            name="agree"
+            label="I agree to the terms and conditions"
+            validator={validate
+              .string()
+              .oneOf(['true'])
+              .required('Please agree to the terms and conditions')}
+          />
+        </Form>
+      </Box>
     </main>
   );
 }
