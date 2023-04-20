@@ -8,6 +8,10 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+const submitForm = async (form) => {
+  console.log(form);
+};
+
 export default function App() {
   return (
     <main>
@@ -20,7 +24,7 @@ export default function App() {
           borderRadius: '4px',
         }}
       >
-        <Form>
+        <Form onSubmit={submitForm}>
           <Form.TextField
             cols={{ xs: 12, md: 5 }}
             name="firstName"

@@ -8,7 +8,11 @@ import * as yup from 'yup';
 
 const defaultCols = { xs: 12, sm: 12, md: 12, lg: 12 };
 
-export default function Form({ children = null, submitButtonText = 'Submit' }) {
+export default function Form({
+  children = null,
+  onSubmit = () => {},
+  submitButtonText = 'Submit',
+}) {
   const childrenArray = Children.toArray(children);
 
   const initialValues = Object.fromEntries(
@@ -36,7 +40,7 @@ export default function Form({ children = null, submitButtonText = 'Submit' }) {
     validationSchema,
     validateOnChange: false,
     onSubmit: (formValues) => {
-      console.log(formValues);
+      onSubmit(formValues);
     },
   });
 
@@ -90,6 +94,7 @@ export default function Form({ children = null, submitButtonText = 'Submit' }) {
 
 Form.propTypes = {
   children: PropTypes.node,
+  onSubmit: PropTypes.func,
   submitButtonText: PropTypes.string,
 };
 

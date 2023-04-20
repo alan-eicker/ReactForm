@@ -10,9 +10,22 @@ View the [demo](https://alaneicker1975.github.io/ReactForm/).
 import React from 'react';
 import Form, { validate } from './Form';
 
+const submitForm = async (form) => {
+  const response = await fetch('/path/to/api', {
+    method: 'POST',
+    headers: {
+      Accept: 'application.json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(form),
+  });
+
+  return response.json();
+};
+
 export default function App() {
   return (
-    <Form>
+    <Form onSubmit={submitForm}>
       <Form.TextField
         cols={{ xs: 12, md: 5 }}
         name="firstName"
