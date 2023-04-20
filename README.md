@@ -74,9 +74,7 @@ export default function App() {
 
 ### Form API
 
-### Form Fields API
-
-<Form />
+&lt;Form />
 
 #### Props
 
@@ -84,6 +82,8 @@ export default function App() {
 | ---------------- | -------- |
 | onSubmit         | Function |
 | submitButtonText | String   |
+
+### Form Fields API
 
 [<Form.TextField />](https://mui.com/material-ui/react-text-field/)\
 [<Form.Autocomplete />](https://mui.com/material-ui/react-autocomplete/)\
