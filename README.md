@@ -42,11 +42,17 @@ export default function App() {
       <Form.CheckOption
         type="checkbox"
         name="agree"
-        label="I agree to the terms and conditions"
-        validator={validate
-          .string()
-          .oneOf(['true'])
-          .required('Please agree to the terms and conditions')}
+        label="I trigger a conditional field"
+      />
+      <Form.TextField
+        showIf={['agree', true]}
+        cols={{ xs: 12, md: 12 }}
+        name="condtionalField"
+        label="Conditional Field"
+        validator={validate.string().when('agree', {
+          is: true,
+          then: () => validate.string().required('Required field'),
+        })}
       />
     </Form>
   );
