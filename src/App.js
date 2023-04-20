@@ -18,7 +18,15 @@ const layout = {
 export default function App() {
   return (
     <main>
-      <Box component="div" sx={{ p: 3, border: '1px solid #ccc' }}>
+      <Box
+        component="div"
+        sx={{
+          p: 3,
+          background: '#fff',
+          boxShadow: '0 0 7px rgba(0, 0, 0, 0.17)',
+          borderRadius: '4px',
+        }}
+      >
         <Form>
           <Form.TextField
             cols={layout.firstName}
