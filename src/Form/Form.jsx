@@ -46,7 +46,7 @@ export default function Form({ children = null, submitButtonText = 'Submit' }) {
         {Children.map(childrenArray, (child) => {
           const {
             cols = defaultCols,
-            isVisible = true,
+            showIf = null,
             id = uniqid(),
             name,
             ...props
@@ -54,16 +54,25 @@ export default function Form({ children = null, submitButtonText = 'Submit' }) {
 
           const error = !!(errors[name] && touched[name]);
 
-          return isVisible ? (
+          let showField = true;
+
+          if (showIf) {
+            const [name, value] = showIf;
+            showField = values[name] === value;
+          }
+
+          return showField ? (
             <Grid item {...cols} key={name}>
               {cloneElement(child, {
                 id,
                 name,
                 value: values[name],
                 onChange: handleChange,
-                fullWidth: true,
-                helperText: errors[name],
                 error,
+                ...(!child?.props?.type?.match(/checkbox|radio/) && {
+                  fullWidth: true,
+                  helperText: errors[name],
+                }),
                 ...props,
               })}
             </Grid>

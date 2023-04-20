@@ -25,13 +25,13 @@ export default function App() {
             cols={{ xs: 12, md: 5 }}
             name="firstName"
             label="First Name"
-            validator={validate.string().required('First name is required')}
+            validator={validate.string().required('Required field')}
           />
           <Form.TextField
             cols={{ xs: 12, md: 5 }}
             name="lastName"
             label="Last Name"
-            validator={validate.string().required('Last name is required')}
+            validator={validate.string().required('Required field')}
           />
           <Form.TextField
             cols={{ xs: 12, md: 2 }}
@@ -45,16 +45,22 @@ export default function App() {
             validator={validate
               .string()
               .email('Invalid email address')
-              .required('Email address is required')}
+              .required('Required field')}
           />
           <Form.CheckOption
             type="checkbox"
             name="agree"
-            label="I agree to the terms and conditions"
-            validator={validate
-              .string()
-              .oneOf(['true'])
-              .required('Please agree to the terms and conditions')}
+            label="I trigger a conditional field"
+          />
+          <Form.TextField
+            showIf={['agree', true]}
+            cols={{ xs: 12, md: 12 }}
+            name="condtionalField"
+            label="Conditional Field"
+            validator={validate.string().when('agree', {
+              is: true,
+              then: () => validate.string().required('Required field'),
+            })}
           />
         </Form>
       </Box>

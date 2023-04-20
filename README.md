@@ -103,4 +103,24 @@ For more information about Material UI Grid, checkout the [Material UI Grid](htt
 
 ### Conditional Fields
 
-Coming soon!
+Conditional fields can be toggled based on the value of another field. The `showIf` prop takes an array with two items. The first references the field name that will toggle the conditional field, and the second is the value of the references field that will toggle the conditional field.
+
+In the example below, the `condtionalField` will be shown only if the value of `condtionalTrigger` is `true`. Also, notice that the validation on the conditional field is only applied if the `showIf` condition is met.
+
+```jsx
+<Form.CheckOption
+  type="checkbox"
+  name="condtionalTrigger"
+  label="I agree"
+/>
+
+<Form.TextField
+  showIf={['condtionalTrigger', true]}
+  name="condtionalField"
+  label="Conditional Field"
+  validator={validate.string().when('condtionalTrigger', {
+    is: true,
+    then: () => validate.string().required('Required field'),
+  })}
+/>
+```

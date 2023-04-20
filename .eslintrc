@@ -1,6 +1,8 @@
 {
   "parser": "@babel/eslint-parser",
-  "requireConfigFile": false,
+  "parserOptions": {
+    "requireConfigFile": false
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -8,6 +10,7 @@
     "plugin:react-perf/recommended"
   ],
   "rules": {
-    "react-perf/jsx-no-new-object-as-prop": 0
+    "react-perf/jsx-no-new-object-as-prop": 0,
+    "react-perf/jsx-no-new-array-as-prop": 0
   }
 }
