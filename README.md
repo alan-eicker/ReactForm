@@ -76,7 +76,7 @@ The above form fields accept all props specific to the Material UI documentation
 The Form component uses `Formik` and `Yup` to handle the form state. Adding a `validator` prop with a validation rule to a form field will apply that validation rule to that field. The rule below will make the `firsName `field required and show the error message "First name is required" when the field is invalid.
 
 ```jsx
-<TextField
+<Form.TextField
   name="firstName"
   label="First Name"
   validator={validate.string().required('First name is required')}
@@ -92,7 +92,7 @@ For more information on Yup validation schemas, checkout the [Yup](https://githu
 The forms layout utilizes Material UI Grid and can be adjusted by adding the `cols` prop to specify column widths for different breakpoints.
 
 ```jsx
-<TextField
+<Form.TextField
   name="firstName"
   label="First Name"
   cols={{ xs: 12, sm: 6, md: 6 }}
