@@ -4,7 +4,7 @@ A simple React form component with Build in layout and validation features.
 
 View the [demo](https://alaneicker1975.github.io/ReactForm/).
 
-### Usage
+## Usage
 
 ```jsx
 import React from 'react';
@@ -72,18 +72,18 @@ export default function App() {
 }
 ```
 
-### Form API
+## Form API
 
 &lt;Form />
 
-#### Props
+### Props
 
 | Prop             | Type     |
 | ---------------- | -------- |
 | onSubmit         | Function |
 | submitButtonText | String   |
 
-### Form Fields API
+## Form Fields API
 
 [<Form.TextField />](https://mui.com/material-ui/react-text-field/)\
 [<Form.Autocomplete />](https://mui.com/material-ui/react-autocomplete/)\
@@ -92,7 +92,7 @@ export default function App() {
 [<Form.Slider />](https://mui.com/material-ui/react-slider/)\
 [<Form.Switch />](https://mui.com/material-ui/react-switch/)
 
-#### Props
+### Props
 
 The above form fields accept all props specific to the Material UI documentation as well as the following optional props:
 
@@ -101,7 +101,7 @@ The above form fields accept all props specific to the Material UI documentation
 | cols      | Object                 |
 | validator | Yup Validator Instance |
 
-### Validation
+## Validation
 
 The Form component uses `Formik` and `Yup` to handle the form state. Adding a `validator` prop with a validation rule to a form field will apply that validation rule to that field. The rule below will make the `firsName `field required and show the error message "First name is required" when the field is invalid.
 
@@ -117,7 +117,7 @@ The imported `validate` variable is an alias for `yup`, which is exported as par
 
 For more information on Yup validation schemas, checkout the [Yup](https://github.com/jquense/yup) documentation page.
 
-### Layout
+## Layout
 
 The forms layout utilizes Material UI Grid and can be adjusted by adding the `cols` prop to specify column widths for different breakpoints.
 
@@ -131,7 +131,7 @@ The forms layout utilizes Material UI Grid and can be adjusted by adding the `co
 
 For more information about Material UI Grid, checkout the [Material UI Grid](https://v4.mui.com/components/grid/) documentation page.
 
-### Conditional Fields
+## Conditional Fields
 
 Conditional fields can be toggled based on the value of another field. The `showIf` prop takes an array with two items. The first references the field name that will toggle the conditional field, and the second is the value of the reference field that will toggle the conditional field.
 
