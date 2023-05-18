@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Form, { validate } from './Form';
+import Form, { validate } from './features/Form';
 
 import './styles.css';
 import '@fontsource/roboto/300.css';

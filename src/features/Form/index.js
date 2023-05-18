@@ -1,4 +1,4 @@
-import Form from './Form';
+import Form from './components/Form';
 import * as yup from 'yup';
 
 import CheckOption from './components/CheckOption';
