@@ -10,6 +10,7 @@ const defaultCols = { xs: 12, sm: 12, md: 12, lg: 12 };
 
 export default function Form({
   children = null,
+  name = 'form',
   onSubmit = () => {},
   submitButtonText = 'Submit',
 }) {
@@ -45,7 +46,7 @@ export default function Form({
   });
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <form aria-label={name} onSubmit={handleSubmit} noValidate>
       <Grid spacing={2} container>
         {Children.map(childrenArray, (child) => {
           const {
@@ -94,6 +95,7 @@ export default function Form({
 
 Form.propTypes = {
   children: PropTypes.node,
+  name: PropTypes.string,
   onSubmit: PropTypes.func,
   submitButtonText: PropTypes.string,
 };
