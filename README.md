@@ -11,16 +11,22 @@ import React from 'react';
 import Form, { validate } from './Form';
 
 const submitForm = async (form) => {
-  const response = await fetch('/path/to/api', {
-    method: 'POST',
-    headers: {
-      Accept: 'application.json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(form),
-  });
+  try {
+    const response = await fetch('/path/to/api', {
+      method: 'POST',
+      headers: {
+        Accept: 'application.json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(form),
+    });
 
-  return response.json();
+    const json = response.json();
+
+    // Handle successful post request
+  } catch (err) {
+    // handle error
+  }
 };
 
 export default function App() {
