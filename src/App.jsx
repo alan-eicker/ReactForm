@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Form, { validate } from './features/Form';
+import Form from './features/Form';
+import formModel from './formModel';
 
 import './styles.css';
 import '@fontsource/roboto/300.css';
@@ -25,47 +26,12 @@ export default function App() {
         }}
       >
         <Form onSubmit={submitForm}>
-          <Form.TextField
-            cols={{ xs: 12, md: 5 }}
-            name="firstName"
-            label="First Name"
-            validator={validate.string().required('Required field')}
-          />
-          <Form.TextField
-            cols={{ xs: 12, md: 5 }}
-            name="lastName"
-            label="Last Name"
-            validator={validate.string().required('Required field')}
-          />
-          <Form.TextField
-            cols={{ xs: 12, md: 2 }}
-            name="middleInitial"
-            label="MI"
-          />
-          <Form.TextField
-            cols={{ xs: 12, md: 12 }}
-            name="emailAddress"
-            label="Email Address"
-            validator={validate
-              .string()
-              .email('Invalid email address')
-              .required('Required field')}
-          />
-          <Form.CheckOption
-            type="checkbox"
-            name="agree"
-            label="I trigger a conditional field"
-          />
-          <Form.TextField
-            showIf={['agree', true]}
-            cols={{ xs: 12, md: 12 }}
-            name="condtionalField"
-            label="Conditional Field"
-            validator={validate.string().when('agree', {
-              is: true,
-              then: () => validate.string().required('Required field'),
-            })}
-          />
+          <Form.TextField {...formModel.firstName} />
+          <Form.TextField {...formModel.lastName} />
+          <Form.TextField {...formModel.middleInitial} />
+          <Form.TextField {...formModel.emailAddress} />
+          <Form.CheckOption type="checkbox" {...formModel.agree} />
+          <Form.TextField {...formModel.condtionalField} />
         </Form>
       </Box>
     </main>
